@@ -2,7 +2,7 @@
 
 namespace CDC\Loja\RH;
 
-class Funcionario()
+class Funcionario
 {
     protected $nome;
     protected $salario;
