@@ -16,9 +16,15 @@ class ConversorDeNumeroRomano
 
     public function converte($numeroEmRomano)
     {
-        if(array_key_exists($numeroEmRomano, $this->tabela))
-            return $this->tabela[$numeroEmRomano];
+        $acumulador = 0;
 
-        return 0;
+        for($i=0; $i<strlen($numeroEmRomano); $i++){
+            $numeroAtual = $numeroEmRomano[$i];
+
+            if(array_key_exists($numeroAtual, $this->tabela))
+                $acumulador += $this->tabela[$numeroAtual];
+        }
+
+        return $acumulador;
     }
 }
