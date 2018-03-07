@@ -15,7 +15,7 @@ class MaiorEMenor
             //Menor
             if(
                 empty($this->menor) ||
-                $produto->getValor() < $this->menor->getValor()
+                $produto->getValorUnitario() < $this->menor->getValorUnitario()
             ) {
                 $this->menor = $produto;
             }
@@ -23,7 +23,7 @@ class MaiorEMenor
             //Maior
             if(
                 empty($this->maior) ||
-                $produto->getValor() > $this->maior->getValor()
+                $produto->getValorUnitario() > $this->maior->getValorUnitario()
             ){
                 $this->maior = $produto;
             }

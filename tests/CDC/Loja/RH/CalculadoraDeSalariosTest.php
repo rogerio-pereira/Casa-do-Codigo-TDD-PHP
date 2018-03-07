@@ -2,13 +2,14 @@
 
 namespace CDC\Loja\RH;
 
+use CDC\Loja\Test\TestCase;
+
 use CDC\Loja\RH\Funcionario,
     CDC\Loja\RH\TabelaCargos,
     CDC\Loja\RH\CalculadoraDeSalarios;
 
-use PHPUnit_Framework_TestCase as PHPUnit;
 
-class CalculadoradeSalariosTest extends PHPUnit
+class CalculadoradeSalariosTest extends TestCase
 {
     public function testCalculadoraDeSalarioDesenvolvedorComSalarioAbaixoDoLimite()
     {

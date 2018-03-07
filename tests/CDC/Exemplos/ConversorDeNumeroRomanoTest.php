@@ -3,9 +3,9 @@
 namespace CDC\Exemplos;
 
 use CDC\Exemplos\ConversorDeNumeroRomano;
-use PHPUnit_Framework_TestCase as PHPUnit;
+use CDC\Loja\Test\TestCase;
 
-class ConversorDeNumeroRomanoTest extends PHPUnit
+class ConversorDeNumeroRomanoTest extends TestCase
 {
     public function testDeveReconhecerOSimboloI()
     {

@@ -2,12 +2,13 @@
 
 namespace CDC\Loja\Produto;
 
+use CDC\Loja\Test\TestCase;
+
 use CDC\Loja\Carrinho\CarrinhoDeCompras,
     CDC\Loja\Produto\Produto,
     CDC\Loja\Produto\MaiorEMenor;
-use PHPUnit_Framework_TestCase as PHPUnit;
 
-class MaiorEMenorTest extends PHPUnit
+class MaiorEMenorTest extends TestCase
 {
     public function testOrdemDecrescente()
     {
