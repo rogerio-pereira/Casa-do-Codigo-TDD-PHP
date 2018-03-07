@@ -55,4 +55,17 @@ class CarrinhoDeComprasTest extends TestCase
 
         $this->assertEquals(1500.0, $valor, null, 0,0001);
     }
+
+    public function testListaDeProdutos()
+    {
+        $lista = $this->carrinho
+                    ->adiciona(new Produto('Jogo de Jantar', 200.0, 2))
+                    ->adiciona(new Produto('Jogo de Jantar', 100.0, 1));
+
+        $this->assertEquals(2, count($this->carrinho->getProdutos()));
+        $this->assertEquals(200, $this->carrinho->getProdutos()[0]->getValorUnitario());
+        $this->assertEquals(100, $this->carrinho->getProdutos()[1]->getValorUnitario());
+
+        //assert nos outros atributos, como quantidade, etc...
+    }
 }
