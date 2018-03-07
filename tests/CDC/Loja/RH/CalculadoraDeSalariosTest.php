@@ -33,7 +33,7 @@ class CalculadoradeSalariosTest extends PHPUnit
     public function testCalculadoraDeSalarioDBAComSalarioAbaixoDoLimite()
     {
         $calculadora = new CalculadoraDeSalarios();
-        $desenvolvedor = new Funcionario('Rogério', 1500.0, TabelaCargos::DBA);
+        $desenvolvedor = new Funcionario('Rogério', 500.0, TabelaCargos::DBA);
 
         $salario = $calculadora->calculaSalario($desenvolvedor);
 
