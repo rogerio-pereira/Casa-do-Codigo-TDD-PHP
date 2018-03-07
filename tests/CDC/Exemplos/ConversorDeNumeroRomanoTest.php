@@ -2,6 +2,7 @@
 
 namespace CDC\Exemplos;
 
+use CDC\Exemplos\ConversorDeNumeroRomano;
 use PHPUnit_Framework_TestCase as PHPUnit;
 
 class ConversorDeNumeroRomanoTest extends PHPUnit
