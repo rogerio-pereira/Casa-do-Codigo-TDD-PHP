@@ -3,6 +3,7 @@
 namespace CDC\Loja\Carrinho;
 
 use ArrayObject;
+use CDC\Loja\Produto\Produto;
 
 class CarrinhoDeCompras
 {
