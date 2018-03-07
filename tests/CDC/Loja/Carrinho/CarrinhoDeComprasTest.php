@@ -6,7 +6,7 @@ use CDC\Loja\Carrinho\CarrinhoDeCompras;
 use CDC\Loja\Produto\Produto;
 use CDC\Loja\Test\TestCase;
 
-class MaiorPrecoTest extends TestCase
+class CarrinhoDeComprasTest extends TestCase
 {
     private $carrinho;
 
@@ -14,6 +14,19 @@ class MaiorPrecoTest extends TestCase
     {
         $this->carrinho = new CarrinhoDeCompras();
         parent::setUp();
+    }
+
+    public function testDeveAdicionarItems()
+    {
+        $this->assertEmpty($this->carrinho->getProdutos());
+
+        $produto = new Produto("Geladeira", 900.0, 1);
+        $this->carrinho->adiciona($produto);
+
+        $quantidadeCarrinho = count($this->carrinho->getProdutos());
+
+        $this->assertEquals(1, $quantidadeCarrinho);
+        $this->assertEquals($produto, $this->carrinho->getProdutos()[0]);
     }
 
     public function testDeveRetornarZeroSeCarrinhoVazio() 
