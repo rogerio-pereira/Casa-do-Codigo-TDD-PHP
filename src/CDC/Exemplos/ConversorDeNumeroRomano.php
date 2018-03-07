@@ -11,7 +11,7 @@ class ConversorDeNumeroRomano
         'L' => 50,
         'C' => 100,
         'D' => 500,
-        'm' => 1000,
+        'M' => 1000,
     ];
 
     public function converte($numeroEmRomano)
