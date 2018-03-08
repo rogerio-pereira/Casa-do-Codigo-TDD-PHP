@@ -22,7 +22,7 @@ class CalculadoraDeSalarios
         
     }
 
-    public function dezOuVintePorCentoDeDesconto($funcionario)
+    private function dezOuVintePorCentoDeDesconto($funcionario)
     {
         if($funcionario->getSalario() > 3000)
             return $funcionario->getSalario() * 0.8;
@@ -30,7 +30,7 @@ class CalculadoraDeSalarios
         return $funcionario->getSalario() * 0.9;
     }
 
-    public function quinzeOuVinteECincoPorCento($funcionario)
+    private function quinzeOuVinteECincoPorCento($funcionario)
     {
         if($funcionario->getSalario() < 2500)
             return $funcionario->getSalario() * 0.85;
