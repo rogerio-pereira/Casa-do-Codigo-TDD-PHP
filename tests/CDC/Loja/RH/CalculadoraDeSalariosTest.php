@@ -14,7 +14,7 @@ class CalculadoradeSalariosTest extends TestCase
     public function testCalculadoraDeSalarioDesenvolvedorComSalarioAbaixoDoLimite()
     {
         $calculadora = new CalculadoraDeSalarios();
-        $desenvolvedor = new Funcionario('Rogério', 1500.0, TabelaCargos::DESENVOLVEDOR);
+        $desenvolvedor = new Funcionario('Rogério', 1500.0, 'desenvolvedor');
 
         $salario = $calculadora->calculaSalario($desenvolvedor);
 
@@ -24,7 +24,7 @@ class CalculadoradeSalariosTest extends TestCase
     public function testCalculadoraDeSalarioDesenvolvedorComSalarioAcimaDoLimite()
     {
         $calculadora = new CalculadoraDeSalarios();
-        $desenvolvedor = new Funcionario('Rogério', 4000.0, TabelaCargos::DESENVOLVEDOR);
+        $desenvolvedor = new Funcionario('Rogério', 4000.0, 'desenvolvedor');
 
         $salario = $calculadora->calculaSalario($desenvolvedor);
 
@@ -34,7 +34,7 @@ class CalculadoradeSalariosTest extends TestCase
     public function testCalculadoraDeSalarioDBAComSalarioAbaixoDoLimite()
     {
         $calculadora = new CalculadoraDeSalarios();
-        $desenvolvedor = new Funcionario('Rogério', 1500.0, TabelaCargos::DBA);
+        $desenvolvedor = new Funcionario('Rogério', 1500.0, 'dba');
 
         $salario = $calculadora->calculaSalario($desenvolvedor);
 
@@ -44,7 +44,7 @@ class CalculadoradeSalariosTest extends TestCase
     public function testCalculadoraDeSalarioDBAComSalarioAcimaDoLimite()
     {
         $calculadora = new CalculadoraDeSalarios();
-        $desenvolvedor = new Funcionario('Rogério', 4500.0, TabelaCargos::DBA);
+        $desenvolvedor = new Funcionario('Rogério', 4500.0, 'dba');
 
         $salario = $calculadora->calculaSalario($desenvolvedor);
 
@@ -54,7 +54,7 @@ class CalculadoradeSalariosTest extends TestCase
     public function testCalculadoraDeSalarioTestadoresComSalarioAbaixoDoLimite()
     {
         $calculadora = new CalculadoraDeSalarios();
-        $desenvolvedor = new Funcionario('Rogério', 1500.0, TabelaCargos::TESTADOR);
+        $desenvolvedor = new Funcionario('Rogério', 1500.0, 'testador');
 
         $salario = $calculadora->calculaSalario($desenvolvedor);
 
@@ -64,7 +64,7 @@ class CalculadoradeSalariosTest extends TestCase
     public function testCalculadoraDeSalarioTestadoresComSalarioAcimaDoLimite()
     {
         $calculadora = new CalculadoraDeSalarios();
-        $desenvolvedor = new Funcionario('Rogério', 4500.0, TabelaCargos::TESTADOR);
+        $desenvolvedor = new Funcionario('Rogério', 4500.0, 'testador');
 
         $salario = $calculadora->calculaSalario($desenvolvedor);
 
