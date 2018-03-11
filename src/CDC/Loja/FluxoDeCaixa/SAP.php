@@ -2,10 +2,12 @@
 
 namespace CDC\Loja\FluxoDeCaixa;
 
-class SAP
+use CDC\Loja\FluxoDeCaixa\NotaFiscal;
+
+class SAP implements AcaoAposGerarNotaInterface
 {
-    public function envia(NotaFiscal $nf)
+    public function executa(NotaFiscal $nf)
     {
-        //Envia NF para o SAP
+        //Persiste NF
     }
 }

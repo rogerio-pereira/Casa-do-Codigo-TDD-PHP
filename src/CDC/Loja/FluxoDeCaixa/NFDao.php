@@ -2,9 +2,11 @@
 
 namespace CDC\Loja\FluxoDeCaixa;
 
-class NFDao
+use CDC\Loja\FluxoDeCaixa\NotaFiscal;
+
+class NFDao implements AcaoAposGerarNotaInterface
 {
-    public function persiste(NotaFiscal $nf)
+    public function executa(NotaFiscal $nf)
     {
         //Persiste NF
     }
