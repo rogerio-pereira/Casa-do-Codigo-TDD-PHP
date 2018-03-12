@@ -4,6 +4,7 @@ namespace CDC\Loja\FluxoDeCaixa;
 
 use CDC\Loja\FluxoDeCaixa\Fatura;
 use CDC\Loja\FluxoDeCaixa\Pagamento;
+use CDC\Loja\FluxoDeCaixa\MeioPagamento;
 
 use ArrayObject;
 
@@ -11,11 +12,11 @@ class ProcessadorDeBoletos
 {
     public function processa(ArrayObject $boletos, Fatura $fatura)
     {
-        $boleto = current($boletos);
-
-        $pagamento = new Pagamento($boleto->getValor(), MeioPagamento::BOLETO);
-
         $pagamentosFatura = $fatura->getPagamentos();
-        $pagamentosFatura->append($pagamento);
+
+        foreach ($boletos as $boleto) {
+            $pagamento = new Pagamento($boleto->getValor(), MeioPagamento::BOLETO);
+            $pagamentosFatura->append($pagamento);
+        }
     }
 }
