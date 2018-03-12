@@ -39,7 +39,7 @@ class Fatura
         return $this->pagamentos;
     }
 
-    public function adicionaPagamentos(Pagamento $pagamento)
+    public function adicionaPagamento(Pagamento $pagamento)
     {
         $this->pagamentos->append($pagamento);
 
