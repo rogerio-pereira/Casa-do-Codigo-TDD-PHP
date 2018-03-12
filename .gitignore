@@ -1,4 +1,4 @@
 /vendor
 composer.lock
 /.phpintel/*
-src/CDC/Loja/Persistencia/ConexaoComBancoDeDados.php
+/src/CDC/Loja/Persistencia/ConexaoComBancoDeDados.php
