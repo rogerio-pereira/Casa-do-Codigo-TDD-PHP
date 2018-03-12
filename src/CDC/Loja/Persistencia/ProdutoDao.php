@@ -2,6 +2,7 @@
 
 namespace CDC\Loja\Persistencia;
 
+use CDC\Loja\Produto\Produto;
 use PDO;
 
 class ProdutoDao
@@ -15,34 +16,34 @@ class ProdutoDao
 
     public function adiciona(Produto $produto)
     {
-        $sqlString = "INSERT INTO 'produtos' ";
-        $sqlString .= "(descricao, valor_unitario, status) ";
+        $sqlString = "INSERT INTO `produto` ";
+        $sqlString .= "(nome, valor_unitario, status) ";
         $sqlString .= "VALUES (?,?,?)";
 
         $stmt = $this->conexao->prepare($sqlString);
 
-        $stmt->bindParam(1, $produto->getDescricao());
+        $stmt->bindParam(1, $produto->getNome());
         $stmt->bindParam(2, $produto->getValorUnitario());
-        $stmt->bindParam(3, $produto->getStatus());
+        $stmt->bindParam(3, $produto->getQuantidade());
 
         $stmt->execute();
 
         return $this->conexao;
     }
 
-    public function porId()
+    public function porId($id)
     {
-        $sqlString = "SELECT * FROM 'produto' WHERE id=".$id;
+        $sqlString = "SELECT * FROM `produto` WHERE id=".$id;
         $consulta = $this->conexao->query($sqlString);
 
-        return $consulta->fetch(PDO::FETCH_ASSOC);
+        return $consulta->fetch($this->conexao->FETCH_ASSOC);
     }
 
     public function ativos()
     {
-        $sqlString = "SELECT * FROM 'produto' WHERE status=1";
+        $sqlString = "SELECT * FROM `produto` WHERE status=1";
         $consulta = $this->conexao->query($sqlString);
 
-        return $consulta->fetch(PDO::FETCH_ASSOC);
+        return $consulta->fetchAll($this->conexao->FETCH_ASSOC);
     }
 }
