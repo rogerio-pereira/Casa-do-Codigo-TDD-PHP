@@ -30,7 +30,7 @@ class ProdutoDaoTest extends TestCase
     {
         $sqlString = "CREATE TABLE produto ";
         $sqlString .= "(id INTEGER PRIMARY KEY, nome TEXT, ";
-        $sqlString .= "valor_unitario TEXT, status TINYINT(1) );";
+        $sqlString .= "valor_unitario TEXT, quantidade INTEGER, status TINYINT(1) );";
 
         $this->conexao->query($sqlString);
     }
@@ -58,5 +58,22 @@ class ProdutoDaoTest extends TestCase
         $this->assertEquals($salvo['nome'], $produto->getNome());
         $this->assertEquals($salvo['valor_unitario'], $produto->getValorUnitario());
         $this->assertEquals($salvo['status'], $produto->getQuantidade());
+    }
+
+    public function testDeveFiltrarAtivos()
+    {
+        $produtoDao = new ProdutoDao($this->conexao);
+
+        $ativo = new Produto('Geladeira', 150.0, 1);
+        $inativo = new Produto('Geladeira', 180.0, 1);
+        $inativo->ativa(false);
+
+        $produtoDao->adiciona($ativo);
+        $produtoDao->adiciona($inativo);
+
+        $produtosAtivos = $produtoDao->ativos();
+
+        $this->assertEquals(1, count($produtosAtivos));
+        $this->assertEquals(150.0, $produtosAtivos[0]['valor_unitario']);
     }
 }

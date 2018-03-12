@@ -17,14 +17,15 @@ class ProdutoDao
     public function adiciona(Produto $produto)
     {
         $sqlString = "INSERT INTO `produto` ";
-        $sqlString .= "(nome, valor_unitario, status) ";
-        $sqlString .= "VALUES (?,?,?)";
+        $sqlString .= "(nome, valor_unitario, quantidade, status) ";
+        $sqlString .= "VALUES (?,?,?,?)";
 
         $stmt = $this->conexao->prepare($sqlString);
 
         $stmt->bindParam(1, $produto->getNome());
         $stmt->bindParam(2, $produto->getValorUnitario());
         $stmt->bindParam(3, $produto->getQuantidade());
+        $stmt->bindParam(4, $produto->getStatus());
 
         $stmt->execute();
 
